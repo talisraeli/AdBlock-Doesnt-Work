@@ -1,0 +1,25 @@
+## LUDUM DARE 40 - "AdBlock Doesn't Work!" ##
+
+Program:
+	Initialize Ads
+	Angry Meter
+	Video Display
+Graphics:
+	Lots of Ads
+	OS & Web Browser
+	* Custom Video
+	Icon
+	* Custom Mouse
+	Angry Meter
+	"YouTube" Graphics
+Audio:
+	OS Sound Effects
+	Mouse Sound Effect
+	Baby crys
+Script:
+	Story
+	Dialogs
+	Overview to the game
+Animations:
+	Enter to OS
+	Story behind
