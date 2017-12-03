@@ -1,24 +1,41 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
-public class LevelLoader : MonoBehaviour {
+public class LevelLoader : MonoBehaviour
+{
 
-    [SerializeField]
     private GameObject loadingScene;
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(loadingScene);
 
-        LoadNextLevel();
+        loadingScene = GameObject.Find("LoadingScene");
+
+        StartCoroutine(LoadLevel());
     }
 
-    public void LoadNextLevel()
+    public IEnumerator LoadLevel(int sceneIndex = -1, float timeScale = 0f)
     {
-        var scene = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
+        if(sceneIndex == -1)
+            sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        var scene = SceneManager.LoadSceneAsync(sceneIndex);
+        loadingScene.SetActive(true);
+
+        scene.completed += x =>
+        {
+            loadingScene.SetActive(false);
+            Time.timeScale = timeScale;
+        };
+
         while(!scene.isDone)
-            loadingScene.SetActive(true);
-        loadingScene.SetActive(false);
+        {
+            Debug.Log(scene.progress);
+            yield return null;
+        }
+
     }
 }

@@ -20,6 +20,8 @@ public class VideoUIManager : MonoBehaviour {
     private Image volumeIcon;
     [SerializeField]
     private AudioSource audio;
+    [SerializeField]
+    private Slider volumeSlider;
 
     [SerializeField]
     private Sprite[] volumeIcons;
@@ -107,6 +109,19 @@ public class VideoUIManager : MonoBehaviour {
             Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height,
                 true, Screen.currentResolution.refreshRate);
             fullscreenButton.sprite = fullscreenIcons[1];
+        }
+    }
+
+    // Volume button click
+    public void MuteOrUnmute()
+    {
+        if(audio.volume == 0)
+        {
+            volumeSlider.value = 0.3f;
+        }
+        else
+        {
+            volumeSlider.value = 0f;
         }
     }
 

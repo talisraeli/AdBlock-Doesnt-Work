@@ -9,6 +9,8 @@ public class AngryMeter : MonoBehaviour
 
     [SerializeField]
     private Image pointer;
+    [SerializeField]
+    private CanvasScaler canvas;
 
     [SerializeField]
     [Range(20, 60)]
@@ -26,14 +28,15 @@ public class AngryMeter : MonoBehaviour
     private void Start()
     {
         angryMeter = this;
+        canvas = GetComponentInParent<CanvasScaler>();
     }
 
     private void Update()
     {
         // Pointer Movement
         pointer.rectTransform.SetPositionAndRotation(
-            new Vector3(Mathf.Clamp(Ad.numberOfAds, 0f, fail) * (240f / fail) + 8f, pointer.rectTransform.position.y),
-            Quaternion.identity);
+            new Vector3((Mathf.Clamp(Ad.numberOfAds, 0f, fail) * (240f / fail) + 8f) * canvas.scaleFactor,
+            pointer.rectTransform.position.y), Quaternion.identity);
 
         // Setting color multi and click multi
         clickMultiText.SetText("x" + ClickManager.clicksInTheLast2Second.Count);
