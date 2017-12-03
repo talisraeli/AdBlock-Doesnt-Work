@@ -21,12 +21,14 @@ public class FitResolution : MonoBehaviour {
         if(Screen.height <= 360f || Screen.width <= 640)
         {
             canvasScaler.scaleFactor = 0.5f;
-            adsManager.adsScale = 0.5f;
+            if(adsManager != null)
+                adsManager.adsScale = 0.5f;
         }
         else
         {
             canvasScaler.scaleFactor = 1f;
-            adsManager.adsScale = 1f;
+            if(adsManager != null)
+                adsManager.adsScale = 1f;
         }
     }
 

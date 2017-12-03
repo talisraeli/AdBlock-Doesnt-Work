@@ -6,17 +6,19 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Ad : MonoBehaviour {
 
-    private static ushort numberOfAds = 0;
+    public static ushort numberOfAds { get; private set; }
 
     private void Start()
     {
-        // Changing the name of the ad
-        name = "Ad" + numberOfAds++;
+        numberOfAds++;
     }
 
     // "Close Button" event
     public void CloseAd()
     {
+        ClickManager.AddCloseClick();
+        AngryMeter.AddScore();
+        numberOfAds--;
         Destroy(gameObject);
     }
 }

@@ -29,9 +29,15 @@ public class VideoUIManager : MonoBehaviour {
     private Image playPauseIcon;
     [SerializeField]
     private Sprite playIcon, pauseIcon;
-    private static bool isPlay = true;
+    private static bool isPlay = false;
     [SerializeField]
     private GameObject blockPanel;
+
+    [Header("Fullscreen")]
+    [SerializeField]
+    private Sprite[] fullscreenIcons;
+    [SerializeField]
+    private Image fullscreenButton;
 
     private void Start()
     {
@@ -86,6 +92,22 @@ public class VideoUIManager : MonoBehaviour {
             volumeIcon.sprite = volumeIcons[3];
         else
             volumeIcon.sprite = volumeIcons[4];
+    }
+
+    // Exit Fullscreen button event
+    public void Fullscreen()
+    {
+        if(Screen.fullScreen)
+        {
+            Screen.SetResolution(1280, 720, false, Screen.currentResolution.refreshRate);
+            fullscreenButton.sprite = fullscreenIcons[0];
+        }
+        else
+        {
+            Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height,
+                true, Screen.currentResolution.refreshRate);
+            fullscreenButton.sprite = fullscreenIcons[1];
+        }
     }
 
 }
