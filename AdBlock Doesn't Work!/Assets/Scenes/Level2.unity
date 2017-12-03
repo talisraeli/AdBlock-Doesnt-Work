@@ -588,7 +588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adPrefab: {fileID: 114467053088956134, guid: 78b82d6929870554fb05c565eaedc98e, type: 2}
   adsScale: 1
-  minDelay: 0.4
+  minDelay: 0.3
   maxDelay: 0.9
 --- !u!1 &266902469
 GameObject:
@@ -2068,6 +2068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointer: {fileID: 1882903847}
+  canvas: {fileID: 0}
   fail: 30
   totalScoreTxt: {fileID: 1955368856}
   colorMultiTxt: {fileID: 610221930}
@@ -2468,7 +2469,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1865311193}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 42794885476a6f04788128ca0e5ea332, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 2ba3a535229fed54b9d2fbd8fbc58d85, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera: {fileID: 1907068664}
   m_TargetTexture: {fileID: 8400000, guid: 790b4749d0f588041b0573abe1bc1e62, type: 2}
