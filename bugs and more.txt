@@ -1,0 +1,9 @@
+- score doesn't update in new scene
+- level 2 - click multi doesn't remove old clicks
+
+* score:
+	- every scene begins with zero points and adds all the scores to the total score at the end.
+	- every scene begins with the total points.
+* red area sound effect
+* ads movement
+* particals
