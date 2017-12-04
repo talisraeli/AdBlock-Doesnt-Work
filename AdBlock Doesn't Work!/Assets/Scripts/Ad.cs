@@ -63,7 +63,7 @@ public class Ad : MonoBehaviour
             {
                 if(isPostive)
                 {
-                    if(rect.anchoredPosition.y <= max.y && rect.anchoredPosition.y < Screen.width - 200f)
+                    if(rect.anchoredPosition.y <= max.y && rect.anchoredPosition.y < Screen.height - 200f)
                         transform.Translate(Vector3.up * speed * Time.deltaTime);
                     else
                         isPostive = false;
