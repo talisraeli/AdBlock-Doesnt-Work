@@ -33,7 +33,6 @@ public class LevelLoader : MonoBehaviour
 
         while(!scene.isDone)
         {
-            Debug.Log(scene.progress);
             yield return null;
         }
 

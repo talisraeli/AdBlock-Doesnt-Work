@@ -125,4 +125,25 @@ public class VideoUIManager : MonoBehaviour {
         }
     }
 
+    // FOR STORY / CREDITS SCENES ONLY \\
+    //=================================\\
+    public void Skip()
+    {
+        GetComponent<LevelLoader>().LoadLevel();
+    }
+
+    public void PlayAgain()
+    {
+        var loader = GetComponent<LevelLoader>();
+        var gameManager = GetComponent<GameManager>();
+        loader.LoadLevel(0);
+        Destroy(loader.gameObject);
+        Destroy(gameManager.gameObject);
+    }
+
+    public void OpenWebsite()
+    {
+        Application.OpenURL("https://ldjam.com/events/ludum-dare/40/adblock-doesnt-work");
+    }
+
 }

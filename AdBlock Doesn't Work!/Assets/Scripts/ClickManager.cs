@@ -9,6 +9,11 @@ public class ClickManager : MonoBehaviour {
 
     public static List<float> clicksInTheLast2Second = new List<float>();
 
+    private void Start()
+    {
+        clicksInTheLast2Second = new List<float>();
+    }
+
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))

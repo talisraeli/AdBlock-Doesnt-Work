@@ -29,19 +29,21 @@ public class AngryMeter : MonoBehaviour
     {
         angryMeter = this;
         canvas = GetComponentInParent<CanvasScaler>();
+
+        totalScoreTxt.SetText(GameManager.Score.ToString("000000"));
     }
 
     private void Update()
     {
         // Pointer Movement
         pointer.rectTransform.SetPositionAndRotation(
-            new Vector3((Mathf.Clamp(Ad.numberOfAds, 0f, fail) * (240f / fail) + 8f) * canvas.scaleFactor,
+            new Vector3((Mathf.Clamp(AdsManager.numberOfAds, 0f, fail) * (240f / fail) + 8f) * canvas.scaleFactor,
             pointer.rectTransform.position.y), Quaternion.identity);
 
         // Setting color multi and click multi
         clickMultiText.SetText("x" + ClickManager.clicksInTheLast2Second.Count);
 
-        float precent = Mathf.Clamp(Ad.numberOfAds, 0f, fail) / fail;
+        float precent = Mathf.Clamp(AdsManager.numberOfAds, 0f, fail) / fail;
 
         if(precent <= 0.25f)
         {

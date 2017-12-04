@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class AdsManager : MonoBehaviour {
 
+    public static ushort numberOfAds { get; set; }
+
     [SerializeField]
     private Image adPrefab;
 
@@ -27,6 +29,7 @@ public class AdsManager : MonoBehaviour {
 
     private void Start()
     {
+        numberOfAds = 0;
         StartCoroutine(CreateAds());
     }
 

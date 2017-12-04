@@ -6,11 +6,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Ad : MonoBehaviour {
 
-    public static ushort numberOfAds { get; private set; }
-
     private void Start()
     {
-        numberOfAds++;
+        AdsManager.numberOfAds++;
     }
 
     // "Close Button" event
@@ -18,7 +16,7 @@ public class Ad : MonoBehaviour {
     {
         ClickManager.AddCloseClick();
         AngryMeter.AddScore();
-        numberOfAds--;
+        AdsManager.numberOfAds--;
         Destroy(gameObject);
     }
 }
