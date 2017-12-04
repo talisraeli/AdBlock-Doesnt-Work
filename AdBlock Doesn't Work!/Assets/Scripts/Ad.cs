@@ -46,14 +46,14 @@ public class Ad : MonoBehaviour
             {
                 if(isPostive)
                 {
-                    if(rect.anchoredPosition.x <= max.x)
+                    if(rect.anchoredPosition.x <= max.x && rect.anchoredPosition.x < Screen.width - 400f)
                         transform.Translate(Vector3.right * speed * Time.deltaTime);
                     else
                         isPostive = false;
                 }
                 else
                 {
-                    if(rect.anchoredPosition.x >= min.x)
+                    if(rect.anchoredPosition.x >= min.x && rect.anchoredPosition.x > 0f)
                         transform.Translate(Vector3.left * speed * Time.deltaTime);
                     else
                         isPostive = true;
@@ -63,14 +63,14 @@ public class Ad : MonoBehaviour
             {
                 if(isPostive)
                 {
-                    if(rect.anchoredPosition.y <= max.y)
+                    if(rect.anchoredPosition.y <= max.y && rect.anchoredPosition.y < Screen.width - 200f)
                         transform.Translate(Vector3.up * speed * Time.deltaTime);
                     else
                         isPostive = false;
                 }
                 else
                 {
-                    if(rect.anchoredPosition.y >= min.y)
+                    if(rect.anchoredPosition.y >= min.y && rect.anchoredPosition.y > 0f)
                         transform.Translate(Vector3.down * speed * Time.deltaTime);
                     else
                         isPostive = true;
