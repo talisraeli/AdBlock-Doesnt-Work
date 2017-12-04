@@ -13,7 +13,7 @@ public class LevelLoader : MonoBehaviour
 
         loadingScene = GameObject.Find("LoadingScene");
 
-        StartCoroutine(LoadLevel());
+        StartCoroutine(LoadLevel(timeScale: 1));
     }
 
     public IEnumerator LoadLevel(int sceneIndex = -1, float timeScale = 0f)

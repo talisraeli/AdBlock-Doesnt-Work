@@ -7,9 +7,5 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static uint Score { get; set; }
-
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    public static float Volume = 0.3f;
 }

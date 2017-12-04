@@ -1,9 +1,0 @@
-## LUDUM DARE 40 - "AdBlock Doesn't Work!" ##
-
-Graphics:
-	Icon
-	* Custom Mouse
-Script:
-	Overview to the game
-
-FIND AND RESOLVE BUGSSSSS!!!!!!!!!!!!!!!!!!! ***************

@@ -9,6 +9,9 @@ public class VideoManager : MonoBehaviour
     private VideoPlayer videoPlayer;
     private LevelLoader levelLoader;
 
+    [SerializeField]
+    private float timeScale = 0f;
+
     private void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();
@@ -19,7 +22,7 @@ public class VideoManager : MonoBehaviour
     {
         if(videoPlayer.time / 1 + 1 >= videoPlayer.clip.length)
         {
-            StartCoroutine(levelLoader.LoadLevel());
+            StartCoroutine(levelLoader.LoadLevel(timeScale: timeScale));
         }
     }
 

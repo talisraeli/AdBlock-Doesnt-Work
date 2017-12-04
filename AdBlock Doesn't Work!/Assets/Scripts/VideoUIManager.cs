@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class VideoUIManager : MonoBehaviour {
 
@@ -48,6 +49,15 @@ public class VideoUIManager : MonoBehaviour {
         timePosition.maxValue = totalTime;
         // Setting "Total Time"
         this.totalTime.SetText("/" + (totalTime / 60).ToString("0") + ":" + (totalTime / 1 % 60).ToString("00"));
+
+        ChangeVolume(GameManager.Volume);
+        volumeSlider.value = GameManager.Volume;
+
+        if(Time.timeScale != 0)
+        {
+            isPlay = true;
+            video.Play();
+        }
     }
 
     private void Update()
@@ -83,6 +93,7 @@ public class VideoUIManager : MonoBehaviour {
     public void ChangeVolume(float volume)
     {
         audio.volume = volume;
+        GameManager.Volume = volume;
 
         if(volume <= 0f)
             volumeIcon.sprite = volumeIcons[0];
@@ -129,16 +140,14 @@ public class VideoUIManager : MonoBehaviour {
     //=================================\\
     public void Skip()
     {
-        GetComponent<LevelLoader>().LoadLevel();
+        StartCoroutine(GameObject.FindObjectOfType<LevelLoader>().LoadLevel());
     }
 
     public void PlayAgain()
     {
-        var loader = GetComponent<LevelLoader>();
-        var gameManager = GetComponent<GameManager>();
-        loader.LoadLevel(0);
-        Destroy(loader.gameObject);
-        Destroy(gameManager.gameObject);
+        var loader = GameObject.FindObjectOfType<LevelLoader>();
+        StartCoroutine(loader.LoadLevel(0));
+        GameManager.Score = 0;
     }
 
     public void OpenWebsite()
