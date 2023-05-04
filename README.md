@@ -34,3 +34,7 @@ https://www.youtube.com/watch?v=TNsraV23P1A
 - Premiere Pro CC 2017
 - Photoshop CC 2017
 - GitHub
+
+### Links:
+- [Ludum Dare Page](https://ldjam.com/events/ludum-dare/40/adblock-doesnt-work)
+- [Play the game](https://keshetbehanan.itch.io/adblock-doesnt-work)
